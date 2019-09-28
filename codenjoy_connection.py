@@ -27,7 +27,7 @@ class CodenjoyConnection(WebSocketClient):
         self.player = player
 
     def received_message(self, m):
-        print "Received from server: %s" % (str(m))
+        print('Received from server: %s' % (str(m)))
         self.player.process_data(m)
         self.send(self.player.make_step())
 
