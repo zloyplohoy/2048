@@ -34,4 +34,4 @@ class Player:
         Your goal is to decide on the next move and return
         it as one of constants: UP, DOWN, RIGHT or LEFT.
         """
-        return RIGHT
+        # return <DIRECTION>
