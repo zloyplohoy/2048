@@ -23,15 +23,26 @@ class Player:
     @staticmethod
     def make_move(board):
         """
+        Your goal is to reach the highest possible sum of all
+        tiles by moving and merging them on the board. Tiles
+        of equal value merge when moved towards each other,
+        producing a single tile of double the original value.
+        Tiles move all at once in either of four directions.
+        If no moves can be made, the game will save your
+        highscore and start over.
+        """
+
+        """
         You will receive the current state of the game board
         as a two-dimensional list of integers. Representation
-        shows raw data, while string output is pretty printed.
+        shows raw data, while string output is prettyprinted.
         """
         print(repr(board))
         print(str(board))
 
         """
-        Your goal is to decide on the next move and return
-        it as one of constants: UP, DOWN, RIGHT or LEFT.
+        You need to plot and optimal move by examining
+        the board and returning your decision as one of
+        the following constants: UP, DOWN, RIGHT or LEFT.
         """
         # return <DIRECTION>
