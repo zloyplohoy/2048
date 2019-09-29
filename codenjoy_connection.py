@@ -22,6 +22,11 @@
 from ws4py.client.threadedclient import WebSocketClient
 from board import Board
 
+try:
+    from urllib.parse import urlparse, parse_qs
+except ImportError:
+    from urlparse import urlparse, parse_qs
+
 
 class CodenjoyConnection(WebSocketClient):
     def __init__(self, url, player):
@@ -33,3 +38,13 @@ class CodenjoyConnection(WebSocketClient):
         print('Received from server:\n%s' % (str(board)))
         self.player.process_data(board)
         self.send(self.player.make_step())
+
+
+def ws_url(url):
+    parsed = urlparse(url)
+    host = parsed.netloc
+    ws_path = 'codenjoy-contest/ws'
+    player_id = parsed.path.split('/')[-1]
+    code = parse_qs(parsed.query)['code'][0]
+
+    return 'ws://{0}/{1}?user={2}&code={3}'.format(host, ws_path, player_id, code)
