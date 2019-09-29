@@ -20,7 +20,7 @@
 # #L%
 ###
 from player import Player
-from codenjoy_connection import CodenjoyConnection, ws_url
+from connection.codenjoy_connection import CodenjoyConnection, ws_url
 
 URL = ''
 

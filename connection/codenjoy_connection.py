@@ -20,7 +20,7 @@
 # #L%
 ###
 from ws4py.client.threadedclient import WebSocketClient
-from board import Board
+from game.board import Board
 
 try:
     from urllib.parse import urlparse, parse_qs

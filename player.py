@@ -19,7 +19,7 @@
 # <http://www.gnu.org/licenses/gpl-3.0.html>.
 # #L%
 ###
-from moves import UP, DOWN, RIGHT, LEFT
+from game.moves import UP, DOWN, RIGHT, LEFT
 
 
 class Player:
