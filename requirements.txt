@@ -1,1 +1,2 @@
+tabulate
 ws4py
