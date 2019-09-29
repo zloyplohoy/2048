@@ -126,3 +126,6 @@ dmypy.json
 
 # IntelliJ suite
 .idea/
+
+# Git itself for .dockerignore
+.git
