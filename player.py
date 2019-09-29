@@ -20,10 +20,18 @@ from game.moves import UP, DOWN, RIGHT, LEFT
 
 
 class Player:
-    def process_data(self,data):
-        # process data here
-        pass
-    def make_step(self):
-        # prepare response here
-        # pass
+    @staticmethod
+    def make_move(board):
+        """
+        You will receive the current state of the game board
+        as a two-dimensional list of integers. Representation
+        shows raw data, while string output is pretty printed.
+        """
+        print(repr(board))
+        print(str(board))
+
+        """
+        Your goal is to decide on the next move and return
+        it as one of constants: UP, DOWN, RIGHT or LEFT.
+        """
         return RIGHT
