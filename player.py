@@ -19,6 +19,9 @@
 # <http://www.gnu.org/licenses/gpl-3.0.html>.
 # #L%
 ###
+from moves import UP, DOWN, RIGHT, LEFT
+
+
 class Player:
     def process_data(self,data):
         # process data here
@@ -26,4 +29,4 @@ class Player:
     def make_step(self):
         # prepare response here
         # pass
-        return "right=1"
+        return RIGHT
