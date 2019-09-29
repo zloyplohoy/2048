@@ -31,7 +31,9 @@ class CodenjoyConnection(WebSocketClient):
         self.player = player
 
     def received_message(self, m):
-        self.send(self.player.make_move(Board.from_textmessage(m)))
+        move = self.player.make_move(Board.from_textmessage(m))
+        if move:
+            self.send(move)
 
 
 def ws_url(url):
