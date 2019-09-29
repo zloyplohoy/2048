@@ -20,6 +20,8 @@
 # #L%
 ###
 from ws4py.client.threadedclient import WebSocketClient
+from board import Board
+
 
 class CodenjoyConnection(WebSocketClient):
     def __init__(self, url, player):
@@ -27,7 +29,7 @@ class CodenjoyConnection(WebSocketClient):
         self.player = player
 
     def received_message(self, m):
-        print('Received from server: %s' % (str(m)))
-        self.player.process_data(m)
+        board = Board.from_textmessage(m)
+        print('Received from server:\n%s' % (str(board)))
+        self.player.process_data(board)
         self.send(self.player.make_step())
-
