@@ -41,6 +41,9 @@ class CodenjoyConnection(WebSocketClient):
 
 
 def ws_url(url):
+    if not url:
+        print('Please set URL in __main__.py')
+        exit()
     parsed = urlparse(url)
     host = parsed.netloc
     ws_path = 'codenjoy-contest/ws'
